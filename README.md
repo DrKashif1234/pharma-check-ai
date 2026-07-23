@@ -15,6 +15,13 @@
 2. **Medical & Pharmacy Student Learning Curve**: Pharmacology students struggle to master intricate pharmacokinetic pathways (e.g., CYP450 enzyme inhibition and induction) and pharmacodynamic interactions through raw textbook tables alone.
 3. **Lack of Instant, Plain-English Explanations**: Standard drug lookup tools provide dry chemical descriptions without offering simple, step-by-step rationales, clinical board exam takeaways, or practical case scenarios.
 4. **Privacy & Accessibility Barriers**: Healthcare learners need an instant, open tool that requires no invasive registration, account setup, or data tracking.
+   Proof with screen shots
+   <img width="1834" height="781" alt="image" src="https://github.com/user-attachments/assets/685d3c27-2048-4ea0-ac2d-bcdb595d09b1" />
+
+<img width="1804" height="823" alt="image" src="https://github.com/user-attachments/assets/786e833f-e7bc-4fdc-9920-2618bd1629cc" />
+<img width="1826" height="836" alt="image" src="https://github.com/user-attachments/assets/98ad58cc-6ac5-48c5-8461-cf4959ee6ee1" />
+
+
 
 ### The Solution Provided by PharmaCheck AI
 - **Instant Multi-Drug Pairwise Analysis**: Evaluates combinations of 2, 3, 4, or more drugs simultaneously and breaks down all pairwise combinations with color-coded severity levels (Major, Moderate, Minor, None).
