@@ -1,82 +1,102 @@
 # PharmaCheck AI — Drug Interaction Checker & Pharmacology Learning Tool
 
-**PharmaCheck AI** is a modern, responsive educational web application designed for pharmacy students, healthcare learners, and clinicians. It allows users to search medications, check multi-drug interactions (2, 3, 4+ drugs), examine pharmacological mechanisms, review clinical monitoring considerations, and generate AI-powered explanations.
+[![Live Site](https://img.shields.io/badge/Live%20Demo-pharma--check--ai--ten.vercel.app-blue?style=for-the-badge&logo=vercel)](https://pharma-check-ai-ten.vercel.app/)
+
+**Live Application**: [https://pharma-check-ai-ten.vercel.app/](https://pharma-check-ai-ten.vercel.app/)
+
+**PharmaCheck AI** is an open-access, educational web platform designed for pharmacy students, medical learners, and healthcare professionals. It offers multi-drug interaction checking, pairwise mechanism breakdowns, AI-assisted explanations powered by Google Gemini, and interactive pharmacology study tools.
 
 ---
 
-## Key Features
+## 🎯 The Problem Solved
+
+### The Problem
+1. **Polypharmacy Risks & Complex Interactions**: Patients often take multiple co-prescribed medications (3, 4, or more drugs). Evaluating all potential pairwise interactions manually is time-consuming, and traditional tools are often locked behind expensive paywalls or dense commercial software.
+2. **Medical & Pharmacy Student Learning Curve**: Pharmacology students struggle to master intricate pharmacokinetic pathways (e.g., CYP450 enzyme inhibition and induction) and pharmacodynamic interactions through raw textbook tables alone.
+3. **Lack of Instant, Plain-English Explanations**: Standard drug lookup tools provide dry chemical descriptions without offering simple, step-by-step rationales, clinical board exam takeaways, or practical case scenarios.
+4. **Privacy & Accessibility Barriers**: Healthcare learners need an instant, open tool that requires no invasive registration, account setup, or data tracking.
+
+### The Solution Provided by PharmaCheck AI
+- **Instant Multi-Drug Pairwise Analysis**: Evaluates combinations of 2, 3, 4, or more drugs simultaneously and breaks down all pairwise combinations with color-coded severity levels (Major, Moderate, Minor, None).
+- **AI Student Assistant (Gemini 3.6)**: Generates simple plain-English explanations, hypothetical student case scenarios, board exam takeaways, and mechanism breakdowns using verified clinical data as context.
+- **Interactive Pharmacology Study Suite**: Features an integrated quiz mode with rationales, high-yield CYP450 mnemonics (*"SICKFACES"* for inhibitors, *"PS-PORCS"* for inducers), and Narrow Therapeutic Index (NTI) reference guides.
+- **Open, Responsive, & Private**: Operates seamlessly on mobile and desktop without requiring user registration, preserving privacy while keeping bookmarked combinations saved locally.
+
+---
+
+## ✨ Key Features
 
 1. **Multi-Drug Interaction Checker**:
-   - Check interactions between 2, 3, 4, or more drugs simultaneously.
-   - Symmetrical order-independent matching (Drug A + Drug B = Drug B + Drug A).
-   - Multi-drug pairwise combination analysis.
+   - Check interactions between 2, 3, 4+ drugs concurrently.
+   - Symmetrical, order-independent matching (Drug A + Drug B = Drug B + Drug A).
+   - Instant pairwise breakdown showing highest severity and individual pair cards.
 
 2. **Autocomplete Drug Search**:
    - Search by generic name, brand names, or drug class.
-   - Fast, case-insensitive autocomplete suggestions.
+   - Real-time case-insensitive autocomplete with keyboard navigation.
 
-3. **Clinical Interaction Details**:
-   - **Severity Indicators**: Major, Moderate, Minor, No significant interaction identified.
-   - **Interaction Types**: Pharmacokinetic, Pharmacodynamic, Enzyme-Based, Other.
-   - **Mechanism of Action**: Detailed pharmacological breakdown (e.g. CYP3A4 inhibition, additive COX blockade, aldosterone antagonism).
-   - **Clinical Significance, Possible Effects, & Monitoring Guidelines**.
-   - **Source References**: Cited clinical guidelines, Stockley's, FDA communications, and ACC/AHA guidelines.
+3. **Detailed Clinical Pair Cards**:
+   - **Severity Indicators**: Major (Red), Moderate (Amber), Minor (Blue), None (Emerald).
+   - **Mechanism of Action**: Detailed pharmacological explanation (CYP450 pathways, receptor antagonism, additive toxicity).
+   - **Clinical Significance, Effects, & Monitoring Guidelines**.
+   - **Source References**: Cited Stockley's, FDA Safety Communications, and ACC/AHA guidelines.
 
-4. **AI-Powered Student Explanation ("Explain with AI")**:
-   - AI explanations powered by Gemini 3.6 Flash via a secure server-side API route (`/api/explain`).
-   - Uses verified clinical database facts as primary context.
-   - API key remains secure and is **never** exposed to client-side code.
+4. **AI-Powered Student Assistant ("Explain with AI")**:
+   - Powered by Gemini 3.6 via a secure server-side proxy route (`/api/explain`).
+   - Translates complex pharmacology into simple analogies, key takeaways, and student scenarios.
+   - Server-side API key protection ensures keys are never exposed to the client browser.
 
-5. **Student Learning & Study Mode**:
-   - Toggle "Student Mode" for additional pharmacology notes and Black Box exam tips.
-   - Interactive multiple-choice pharmacology quiz mode with score tracking and rationales.
-   - High-yield CYP450 mnemonics ("SICKFACES" inhibitors, "PS-PORCS" inducers) and Narrow Therapeutic Index (NTI) cheatsheets.
+5. **Student Study Mode & Quizzes**:
+   - Toggle **Student Mode** for Black Box exam tips and key takeaways.
+   - Interactive multiple-choice pharmacology quiz with real-time scoring and rationales.
+   - High-yield CYP450 mnemonics and Narrow Therapeutic Index (NTI) cheatsheets.
 
-6. **Favorites & History**:
-   - Bookmark commonly studied combinations (⭐) stored locally via `localStorage`.
-   - Local interaction check history with timestamps and delete options.
+6. **Search History & Bookmarks**:
+   - Save favorite drug combinations (⭐) using local browser storage (`localStorage`).
+   - Review past interaction checks with timestamp history and quick re-check buttons.
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - **Frontend**: React 19, TypeScript, Vite, Tailwind CSS v4, Lucide React icons.
-- **Backend**: Express server (`server.ts`) with Vite middleware in development.
-- **AI Integration**: `@google/genai` TypeScript SDK (server-side Gemini 3.6 Flash).
-- **Storage**: Client-side `localStorage` for privacy, no user account or database required.
+- **Backend / API**: Node.js Express server (`server.ts`) with server-side AI proxy routes.
+- **AI Integration**: `@google/genai` TypeScript SDK (Gemini 3.6 Flash model).
+- **Storage**: Client-side `localStorage` for user bookmarks and search history.
+- **Deployment**: Vercel / Netlify serverless compatible.
 
 ---
 
-## Local Development Setup
+## 🚀 Local Development Setup
 
 ### Prerequisites
-- Node.js (v18+)
+- Node.js (v18 or higher)
 - npm
 
-### Installation & Running
+### Installation Steps
 
-1. **Clone the repository**:
+1. **Clone the Repository**:
    ```bash
    git clone https://github.com/your-username/pharmacheck-ai.git
    cd pharmacheck-ai
    ```
 
-2. **Install dependencies**:
+2. **Install Dependencies**:
    ```bash
    npm install
    ```
 
 3. **Configure Environment Variables**:
-   Create a `.env` file in the root directory (based on `.env.example`):
+   Create a `.env` file in the root directory based on `.env.example`:
    ```env
-   GEMINI_API_KEY="your_gemini_api_key_here"
+   GEMINI_API_KEY=your_gemini_api_key_here
    ```
 
 4. **Start the Development Server**:
    ```bash
    npm run dev
    ```
-   Open `http://localhost:3000` in your browser.
+   Open `http://localhost:3000` in your web browser.
 
 5. **Build for Production**:
    ```bash
@@ -85,44 +105,21 @@
 
 ---
 
-## Deployment Instructions
+## 🌐 Deployment Instructions
 
-PharmaCheck AI is fully compatible with GitHub-based automated deployments to **Vercel** or **Netlify**.
+PharmaCheck AI is configured for one-click deployment on **Vercel** or **Netlify**.
 
-### 1. Deploying to Vercel (GitHub → Vercel)
+### Deploying to Vercel
 
-1. Push your code to a GitHub repository:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit of PharmaCheck AI"
-   git remote add origin https://github.com/your-username/pharmacheck-ai.git
-   git push -u origin main
-   ```
-2. Log in to [Vercel](https://vercel.com) and click **"Add New Project"** -> **"Import Git Repository"**.
-3. Select your `pharmacheck-ai` repository.
-4. Framework Preset: **Vite** or **Node.js**.
-5. Build Command: `npm run build`
-6. Output Directory: `dist`
-7. Under **Environment Variables**, add:
-   - `GEMINI_API_KEY` = `your_gemini_api_key_value`
-8. Click **Deploy**. Vercel will automatically build and host the application!
+1. Push your repository to GitHub.
+2. Log in to [Vercel](https://vercel.com/) and click **"Add New Project"**.
+3. Import your `pharmacheck-ai` GitHub repository.
+4. Set Build Command: `npm run build` and Output Directory: `dist`.
+5. Under **Environment Variables**, add `GEMINI_API_KEY`.
+6. Click **Deploy**.
 
 ---
 
-### 2. Deploying to Netlify (GitHub → Netlify)
+## ⚠️ Medical Disclaimer
 
-1. Push code to GitHub.
-2. Log in to [Netlify](https://netlify.com) and click **"Add new site"** -> **"Import an existing project"**.
-3. Connect your GitHub account and select `pharmacheck-ai`.
-4. Build Settings:
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-5. Under **Environment variables**, set `GEMINI_API_KEY`.
-6. Click **Deploy Site**.
-
----
-
-## Medical Disclaimer
-
-This application is intended strictly for **educational and informational purposes only**. It is designed as a study aid for pharmacy students and healthcare learners. It is not a substitute for professional medical advice, diagnosis, clinical judgment, or consultation with a qualified pharmacist or physician. Drug interaction information may evolve and should always be verified against current, authoritative clinical references before making patient-specific therapeutic decisions.
+This application is created strictly for **educational and informational purposes**. It is designed as a learning aid for pharmacy students, healthcare trainees, and clinical learners. It is **not** a substitute for professional medical advice, clinical diagnosis, or patient-specific therapeutic decision-making. Always consult a licensed pharmacist or physician for medical guidance.
