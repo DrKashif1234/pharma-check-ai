@@ -1,0 +1,6 @@
+{
+  "name": "PharmaCheck AI",
+  "description": "Educational drug interaction checker and pharmacology learning tool for healthcare students and professionals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
